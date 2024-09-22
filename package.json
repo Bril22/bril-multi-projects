@@ -19,5 +19,13 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "daisyui": "^4.12.10",
+    "embla-carousel": "^8.0.0-rc19",
+    "embla-carousel-autoplay": "^8.0.0-rc19",
+    "embla-carousel-class-names": "^8.0.0-rc19",
+    "embla-carousel-react": "^8.0.0-rc19",
+    "lightgallery": "^2.7.1"
+  }
 }
