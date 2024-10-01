@@ -15,22 +15,22 @@ export const mainMenu: MenuInterface[] = [
     },
     {
         name: "Portfolio",
-        url: "/",
+        url: "/portfolio",
         active: true,
     },
-    {
-        name: "About",
-        url: "/",
-        active: true,
-    },
-    {
-        name: "Testimonials",
-        url: "/",
-        active: true,
-    },
-    {
-        name: "Contact",
-        url: "/",
-        active: true,
-    },
+    // {
+    //     name: "About",
+    //     url: "/",
+    //     active: true,
+    // },
+    // {
+    //     name: "Testimonials",
+    //     url: "/",
+    //     active: true,
+    // },
+    // {
+    //     name: "Contact",
+    //     url: "/contact",
+    //     active: true,
+    // },
 ];

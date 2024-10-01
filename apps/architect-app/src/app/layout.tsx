@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar1Component } from "@ui/components/navbar"
 import { LayoutTemplate } from "@ui/components/layout"
+import { Footer1Component } from "@ui/components/footer"
+import { footerList, socialMedia } from "@/constants/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,11 +32,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <LayoutTemplate>
+        <LayoutTemplate title="Bernice Claresta" socialMedia={socialMedia}>
           <div className="flex-none hidden md:block">
             <Navbar1Component />
           </div>
           {children}
+          <Footer1Component
+            title="Bernice Claresta"
+            footerList={footerList}
+            socialMedia={socialMedia}
+            description="A descriptive paragraph that tells clients how good you are and proves that you are the best choice."
+            copyright="2024 Bernice Claresta. All rights reserved."
+          />
         </LayoutTemplate>
       </body>
     </html>

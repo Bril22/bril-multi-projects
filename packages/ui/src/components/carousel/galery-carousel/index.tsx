@@ -94,7 +94,7 @@ export const GaleryCarousel = (props: Props) => {
             ) : null}
             <LightGallery
                 dynamic
-                elementClassNames="custom-class-name"
+                elementClassNames="custom-class-name hidden"
                 onInit={onInit}
                 dynamicEl={items}
                 plugins={[lgThumbnail]}
@@ -107,7 +107,7 @@ export const GaleryCarousel = (props: Props) => {
                         return <Card {...data} key={index} />;
                     })}
             </div>
-            {props.facility ? <div className="" /> : null}
+            {/* {props.facility ? <div className="" /> : null} */}
         </section>
     );
 };
