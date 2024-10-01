@@ -1,8 +1,20 @@
+import { StaticImageData } from "next/image";
 import { Icons } from "../icons"
 import { IconNames } from "../icons/interface"
 import { SidebarLayout } from "./sidebar"
+import { Icon } from "../footer";
 
-export const LayoutTemplate = ({ children }: { children: React.ReactNode }) => {
+export const LayoutTemplate = ({ 
+    children,
+    title,
+    logo,
+    socialMedia
+}: { 
+    children: React.ReactNode;
+    title?: string;
+    logo?: StaticImageData
+    socialMedia?: Icon[]
+}) => {
     return (
         <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -28,7 +40,7 @@ export const LayoutTemplate = ({ children }: { children: React.ReactNode }) => {
                     aria-label="close sidebar"
                     className="drawer-overlay"
                 ></label>
-                <SidebarLayout />
+                <SidebarLayout title={title} logo={logo} socialMedia={socialMedia} />
             </div>
         </div>
     )

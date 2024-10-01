@@ -18,7 +18,7 @@ export const Navbar1Component = () => {
   }, [pathname]);
 
   return (
-    <ul className="absolute top-0 left-0 right-0 z-20 menu menu-horizontal text-white items-center justify-center">
+    <ul className={`absolute top-0 left-0 right-0 z-20 menu menu-horizontal text-white items-center justify-center`}>
       {mainMenu.map((item, index) => {
         // const isActive = pathname === '/' && item.name === 'home' || pathname.includes(item.name);
         return (

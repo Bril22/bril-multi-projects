@@ -1,16 +1,35 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Icons } from "../icons";
 import { IconNames } from "../icons/interface";
 import { mainMenu } from "../../constants";
-// fill="#EDEEEF"
-export const SidebarLayout = () => {
+
+type Icon = {
+  name: IconNames;
+  url?: string;
+}
+interface ISidebarLayout {
+  logo?: StaticImageData;
+  title?: string;
+  socialMedia?: Icon[];
+}
+
+export const SidebarLayout = ({
+  logo,
+  title,
+  socialMedia
+}: ISidebarLayout) => {
   return (
     <div className="bg-base-200 min-h-full w-80 p-2 flex flex-col justify-between pb-4">
       <div>
-        {/* <div className="p-4 py-3">
-          <Image src={Logo} alt="" className="fill-black" />
-        </div> */}
+        <div className="p-4 py-3">
+          {logo && (
+            <Image src={logo} alt="logo" className="fill-black" />
+          )}
+          {title && (
+            <h2 className="text-2xl font-bold">{title}</h2>
+          )}
+        </div>
         <ul className="menu px-0">
           {mainMenu.map((item, index) => {
             return (
@@ -50,6 +69,15 @@ export const SidebarLayout = () => {
           })}
         </ul>
       </div>
+      {socialMedia && (
+        <div className='flex gap-2'>
+          {socialMedia?.map((item, i) => (
+            <Link href={item.url!} key={i} className='flex gap-2 max-w-44'>
+              <Icons name={item.name} size={26} />
+            </Link>
+          ))}
+        </div>
+      )}
       {/* <div>
         <div className="p-4 py-3">
           <h4>Contact Us</h4>
@@ -69,10 +97,10 @@ export const SidebarLayout = () => {
           </ul>
         </div> */}
 
-        {/* <div className="px-4 py-3">
+      {/* <div className="px-4 py-3">
           <h4>Follow Us</h4>
         </div> */}
-        {/* <ul className="menu menu-horizontal ml-6 p-0 mr-4">
+      {/* <ul className="menu menu-horizontal ml-6 p-0 mr-4">
           {socialMedia.map((item, index) => (
             <li key={index} className="px-1">
               <Link

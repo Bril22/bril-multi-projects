@@ -8,6 +8,8 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
-    '@typescript-eslint/no-unused-vars': ['warn'],
+    // '@typescript-eslint/no-unused-vars': ['warn'],
+    "@typescript-eslint/no-unused-vars": ["off", {}],
+    'no-redeclare': ["off", {}]
   },
 };
