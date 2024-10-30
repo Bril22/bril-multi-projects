@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+#home {
+    background-color: #151515;
+    color: aliceblue;
+}

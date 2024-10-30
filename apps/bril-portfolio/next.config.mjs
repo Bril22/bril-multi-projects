@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    experimental: {
+      turbo: {
+        useSwcCss: true,
+        resolveExtensions: [
+          ".mdx",
+          ".tsx",
+          ".ts",
+          ".jsx",
+          ".js",
+          ".mjs",
+          ".json",
+        ],
+      },
+    },
+  };
+  export default nextConfig;
+  

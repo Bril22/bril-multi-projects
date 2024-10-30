@@ -1,13 +1,15 @@
 "use client";
 
-import { mainMenu } from "../../constants";
 import Link from "next/link";
 import { Icons } from "../icons";
 import { IconNames } from "../icons/interface";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { INavbar } from "./interface";
 
-export const Navbar1Component = () => {
+export const Navbar1Component = ({
+  menu,
+}: INavbar) => {
   const [active, setActive] = useState<boolean>(false);
   const pathname = usePathname();
 
@@ -18,8 +20,8 @@ export const Navbar1Component = () => {
   }, [pathname]);
 
   return (
-    <ul className={`absolute top-0 left-0 right-0 z-20 menu menu-horizontal text-white items-center justify-center`}>
-      {mainMenu.map((item, index) => {
+    <ul className={`absolute top-0 left-0 right-0 z-20 menu menu-horizontal text-white items-center justify-center h-20`}>
+      {menu.map((item, index) => {
         // const isActive = pathname === '/' && item.name === 'home' || pathname.includes(item.name);
         return (
           item.active && (
@@ -54,7 +56,7 @@ export const Navbar1Component = () => {
                   </ul>
                 </div>
               ) : (
-                <Link href={item.url} className="px-8 text-white">
+                <Link href={item.url} className={`px-8 text-white`}>
                   {item.name.toUpperCase()}
                 </Link>
               )}

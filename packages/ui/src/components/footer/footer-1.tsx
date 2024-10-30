@@ -1,32 +1,8 @@
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
-import { IconNames } from '../icons/interface';
 import { Icons } from '../icons';
-
-export type Icon = {
-    name: IconNames;
-    url?: string;
-}
-
-export type Content = {
-    title: string;
-    link?: string;
-    icon?: IconNames;
-};
-export type FooterList = {
-    title: string;
-    content: Content[];
-}[];
-
-interface IFooter {
-    img?: string | StaticImageData;
-    title?: string;
-    description?: string;
-    footerList?: FooterList[];
-    socialMedia?: Icon[];
-    copyright?: string;
-}
+import { IFooter } from './interface';
 
 export const Footer1Component = ({
     img,
@@ -37,7 +13,7 @@ export const Footer1Component = ({
     copyright,
 }: IFooter) => {
     return (
-        <div className='bg-based-primary/20 w-full md:mt-32 mt-16'>
+        <div className='bg-based-primary/20 w-full'>
             <div className='container mx-auto py-8 px-4'>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                     <div className='flex flex-col gap-4 justify-start text-info-content'>
