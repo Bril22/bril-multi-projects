@@ -1,17 +1,22 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { LayoutTemplate } from "@ui/components/layout"
+import { Footer2Component } from "@ui/components/footer"
+import { footerList, socialMedia } from "@/constants/footer";
+import { mainMenu } from "@ui/constants";
+import { Navbar2Component } from "@ui/components/navbar"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +31,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased`}
       >
-        {children}
+        <LayoutTemplate title="Brilian Natanael" socialMedia={socialMedia}>
+          <div className="flex-none">
+            <Navbar2Component
+              // menu={mainMenu}
+              title="Briliann"
+              socialMedia={socialMedia}
+            />
+          </div>
+          {children}
+          <Footer2Component
+            title="Brilian Natanael Zega"
+            footerList={footerList}
+            socialMedia={socialMedia}
+            description="Every error has a solution, just like every problem. Let me help you discover it."
+            copyright={`2024 Brilian Natanael`}
+          />
+        </LayoutTemplate>
       </body>
     </html>
   );

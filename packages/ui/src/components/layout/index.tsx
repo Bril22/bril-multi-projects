@@ -21,7 +21,7 @@ export const LayoutTemplate = ({
             <div className="drawer-content flex flex-col">
                 {/* <div className="navbar w-full bg-transparent text-white p-0"> */}
                 {/* <div className="container mx-auto items-center  "> */}
-                <div className="flex-none lg:hidden">
+                {/* <div className="flex-none lg:hidden">
                     <label
                         htmlFor="my-drawer-3"
                         aria-label="open sidebar"
@@ -29,19 +29,17 @@ export const LayoutTemplate = ({
                     >
                         <Icons name={IconNames["3-line-menu"]} className="text-white"/>
                     </label>
-                    {/* </div> */}
-                    {/* </div> */}
-                </div>
+                </div> */}
                 {children}
             </div>
-            <div className="drawer-side z-40">
+            {/* <div className="drawer-side z-40">
                 <label
                     htmlFor="my-drawer-3"
                     aria-label="close sidebar"
                     className="drawer-overlay"
                 ></label>
                 <SidebarLayout title={title} logo={logo} socialMedia={socialMedia} />
-            </div>
+            </div> */}
         </div>
     )
 }

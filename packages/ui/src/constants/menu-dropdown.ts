@@ -1,4 +1,4 @@
-interface MenuInterface {
+export interface MenuInterface {
     name: any;
     url: string;
     subItems?: MenuInterface[];
@@ -14,15 +14,16 @@ export const mainMenu: MenuInterface[] = [
         active: true,
     },
     {
+        name: "About",
+        url: "/about",
+        active: true,
+    },
+    {
         name: "Portfolio",
         url: "/portfolio",
         active: true,
     },
-    // {
-    //     name: "About",
-    //     url: "/",
-    //     active: true,
-    // },
+
     // {
     //     name: "Testimonials",
     //     url: "/",
