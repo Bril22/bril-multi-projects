@@ -1,4 +1,4 @@
-import { MenuInterface } from "@/constants";
+import { MenuInterface } from "../../constants";
 import { Icon } from "../footer";
 
 export interface INavbar {
