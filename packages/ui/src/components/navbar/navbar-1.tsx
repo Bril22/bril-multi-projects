@@ -21,7 +21,7 @@ export const Navbar1Component = ({
 
   return (
     <ul className={`absolute top-0 left-0 right-0 z-20 menu menu-horizontal text-white items-center justify-center h-20`}>
-      {menu.map((item, index) => {
+      {menu?.map((item, index) => {
         // const isActive = pathname === '/' && item.name === 'home' || pathname.includes(item.name);
         return (
           item.active && (
